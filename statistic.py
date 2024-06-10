@@ -16,7 +16,7 @@ def twoMeans(total_df, dys_nm):
     feb_df = dd_df[dd_df['month'] == 2]
     mar_df = dd_df[dd_df['month'] == 3]
 
-    st.markdown(f'2월 따릉이 대여량(회) : {round(feb_df['use'].mean(),3)}')
+    st.markdown(f'2월 따릉이 대여량(회) : {round(feb_df["use"].mean(),3)}')
     st.markdown(f'3월 따릉이 대여량(회) : {round(mar_df["use"].mean(),3)}')
 
     dy_result = ttest(feb_df['use'], mar_df['use'], paired=False)
