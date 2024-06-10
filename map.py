@@ -35,7 +35,7 @@ def mapMatplot(merge_df, seoul_gpd):
     cbar = plt.colorbar(sm, ax=ax)
     cbar.set_label('평균 사용량')
 
-    ax.set_title('서울시 따릉이 대여소 사용량과 동별 지도', fontsize=16)
+    ax.set_title('서울시 따릉이 대여소 사용량과 동별 지도', fontsize=16, fontproperties=fontprop)
     ax.set_axis_off()
 
     st.pyplot(fig)
