@@ -33,7 +33,7 @@ def mapMatplot(merge_df, seoul_gpd):
     sc = ax.scatter(merge_df['longitude_x'], merge_df['latitude_x'], c=merge_df['mean'], cmap=cmap, norm=norm, s=40, edgecolor='black')
 
     cbar = plt.colorbar(sm, ax=ax)
-    cbar.set_label('평균 사용량')
+    cbar.set_label('평균 사용량', fontproperties=fontprop)
 
     ax.set_title('서울시 따릉이 대여소 사용량과 동별 지도', fontsize=16, fontproperties=fontprop)
     ax.set_axis_off()
