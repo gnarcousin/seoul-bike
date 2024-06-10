@@ -17,7 +17,7 @@ def find_closest_dong(station_lat, station_lon, dongs_df):
     return distances.idxmin()
 
 def mapMatplot(merge_df, seoul_gpd):
-    fpath = os.path.join(os.getcwd(), "NanumFont/NanumGothic.ttf")
+    fpath = os.path.join(os.getcwd(), "Nanum_Gothic/NanumGothic-Bold.ttf")
     fontprop = fm.FontProperties(fname=fpath, size=12)
     plt.rc('font', family = 'NanumGothic')
 
