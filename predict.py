@@ -59,7 +59,7 @@ def dy_predict(total_df, sample_size=10, selected_centers=None):
         model = Prophet()
         model.fit(summary_df)
         model.plot(forecast1, uncertainty=True, ax=axs[plot_idx])
-        axs[plot_idx].set_title(f'서울시 {center} 평균 사용량 예측 시나리오 {28}일간', fontproperties=fontprop)
+        axs[plot_idx].set_title(f'서울시 {center} 평균 사용량 예측 시나리오', fontproperties=fontprop)
         axs[plot_idx].set_xlabel('날짜', fontproperties=fontprop)
         axs[plot_idx].set_ylabel('평균 사용량', fontproperties=fontprop)
         for tick in axs[plot_idx].get_xticklabels():
@@ -77,6 +77,7 @@ def showPred(total_df):
     st.sidebar.header('필터링 옵션')
 
     st.markdown('## 따릉이 사용률 예측 그래프')
+    st.markdown("서울시 따릉이 평균 사용량 예측 시나리오")
     sample_size = None
     centers = list(total_df['center'].unique())
     selected_centers = st.sidebar.multiselect('대여소 선택', centers, default=centers[:2])
