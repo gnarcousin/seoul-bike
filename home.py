@@ -59,6 +59,6 @@ def run_home(total_df):
 
     st.markdown(
         "## 활용한 공공데이터 \n"
-        "1. 서울시 공공자전거 이용현황: https://data.seoul.go.kr/dataList/OA-14994/F/1/datasetView.do#"
+        "1. 서울시 공공자전거 이용현황: https://data.seoul.go.kr/dataList/OA-14994/F/1/datasetView.do \n"
         "2. 서울시 따릉이대여소 마스터 정보: https://data.seoul.go.kr/dataList/OA-21235/S/1/datasetView.do"
     )
