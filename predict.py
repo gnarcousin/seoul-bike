@@ -75,6 +75,8 @@ def dy_predict(total_df, sample_size=10, selected_centers=None):
 
 def showPred(total_df):
     st.sidebar.header('필터링 옵션')
+
+    st.markdown('## 따릉이 사용률 예측 그래프')
     sample_size = None
     centers = list(total_df['center'].unique())
     selected_centers = st.sidebar.multiselect('대여소 선택', centers, default=centers[:2])
