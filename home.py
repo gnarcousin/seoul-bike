@@ -6,7 +6,6 @@ def run_home(total_df):
     st.markdown(
         "## 대시보드 개요 \n"
         "본 프로젝트는 서울시 따릉이 공유 서비스 현황을 알려주는 대시보드 입니다."
-        "여기에 추가하고 싶은 내용을 추가하면 됩니다."
                 )
     
     total_df['date'] = pd.to_datetime(total_df['date'].astype(str),format='%Y-%m')
@@ -49,3 +48,9 @@ def run_home(total_df):
         st.metric(label= f'{dy_year}년 {selected_month} 전체 대여량의 평균 (회)', value = prettify(average_rent_month))
     with col3:
         st.metric(label= f'{dy_year}년 전체 대여량 (회)', value = prettify(total_rentals_year))
+        
+    st.markdown("<hr>", unsafe_allow_html=True)
+    st.markdown("## 따릉이 분석의 필요성')
+                
+    st.markdown("기후동행 카드의 보급의 증가로 따릉이 사용률이 늘어났는지와 따릉이 대여소가 필요하거나 많이 사용되는 지역에 대해 안다면\n
+    더 원할한 서비스를 제공할 수 있기에 분석하였습니다.")
