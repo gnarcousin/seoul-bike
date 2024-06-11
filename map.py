@@ -40,6 +40,23 @@ def mapMatplot(merge_df, seoul_gpd):
 
     st.pyplot(fig)
 
+def plot_histogram(merge_df):
+    fpath = os.path.join(os.getcwd(), "NanumFont/NanumGothicBold.ttf")
+    fontprop = fm.FontProperties(fname=fpath, size=12)
+    plt.rc('font', family='NanumGothic')
+
+    # 상위 10개의 평균 사용량 동 추출
+    top10_df = merge_df.nlargest(10, 'mean')
+
+    fig, ax = plt.subplots(figsize=(15, 10))
+    ax.barh(top10_df['EMD_KOR_NM'], top10_df['mean'], color='skyblue')
+    ax.set_xlabel('평균 사용량', fontsize=14, fontproperties=fontprop)
+    ax.set_ylabel('동', fontsize=14, fontproperties=fontprop)
+    ax.set_title('상위 10개 동별 평균 사용량', fontsize=16, fontproperties=fontprop)
+    plt.xticks(fontsize=12, fontproperties=fontprop)
+    plt.yticks(fontsize=12, fontproperties=fontprop)
+    
+    st.pyplot(fig)
 
 def showMap(total_df):
     seoul_gpd = gpd.read_file('seoul_emd.geojson.gpkg')
@@ -77,3 +94,7 @@ def showMap(total_df):
 
     st.markdown("## 서울시 동별 대여소와 대여 현황")
     mapMatplot(merge_df, seoul_gpd)
+    st.markdown("<hr>", unsafe_allow_html = True)
+
+    st.markdonw("## 상위 10개 동별 평균 사용량 히스토그램")
+    plot_histogram(merge_df)
