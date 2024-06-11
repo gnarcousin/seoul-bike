@@ -19,7 +19,7 @@ def main():
         run_home(total_df)
     elif selected == '탐색적 자료분석':
         run_eda_home(total_df)
-    elif selected == '따릉이 예측':
+    elif selected == '따릉이 사용률 예측':
         showPred(total_df)
     else:
         print('error')
