@@ -3,7 +3,8 @@ import pandas as pd
 import plotly.express as px
 
 def whereChart(total_df):
-    st.markdown('## 지역별 따릉이 대여 추세 \n')
+    st.markdown('## 지역별 따릉이 평균 대여 추세 \n')
+    st.write(f'{dys_nm2} 대여소의 전체 따릉이 평균 대여 추세')
     
     dys_nm = st.sidebar.selectbox('대여소', total_df['center'].unique())
     filtered_df = total_df[total_df['center'] == dys_nm]
@@ -17,6 +18,7 @@ def whereChart(total_df):
 
 def meanChart(total_df):
     st.markdown('## 연도별 따릉이 평균 대여 추세 \n')
+    st.write(f'{dys_nm2} 대여소의 연도별 따릉이 평균 대여 추세')
 
     dys_nm2 = st.sidebar.selectbox('대여소', total_df['center'].unique())
     
@@ -35,6 +37,7 @@ def meanChart(total_df):
 
 def monthChart(total_df):
     st.markdown('## 월별 따릉이 평균 대여 추세 \n')
+    st.write(f'{dys_nm2} 대여소의 월별 따릉이 평균 대여 추세')
     
     dys_nm2 = st.sidebar.selectbox('대여소', total_df['center'].unique())
 
