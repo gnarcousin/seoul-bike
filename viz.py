@@ -15,6 +15,7 @@ def whereChart(total_df):
         x = 'date',
         y = 'use'
     )
+    fig.add_scatter(x = filtered_df['date'], y = filtered_df['use'], mode = 'markers')
     st.plotly_chart(fig)
 
 def meanChart(total_df):
@@ -34,6 +35,7 @@ def meanChart(total_df):
         x = 'year',
         y = 'use'
     )
+    fig2.add_scatter(x = year_rental_total['year'], y = year_rental_total['use'], mode = 'markers')
     st.plotly_chart(fig2)
 
 def monthChart(total_df):
@@ -53,6 +55,7 @@ def monthChart(total_df):
         x = 'month',
         y = 'use'
     )
+    fig3.add_scatter(x = month_rental_total['month'], y = month_rental_total['use'], mode = 'markers')
     st.plotly_chart(fig3)
 
 def barChart(total_df):
