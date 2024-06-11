@@ -19,11 +19,14 @@ def whereChart(total_df):
 
 def meanChart(total_df):
     st.markdown('## 연도별 따릉이 평균 대여 추세 \n')
+
+    dys_nm = st.sidebar.selectbox('대여소', total_df['center'].unique())
     
     total_df['date'] = pd.to_datetime(total_df['date'].astype(str),format='%Y-%m')
     total_df['year'] = total_df['date'].dt.year
 
     year_rental_total = total_df.groupby('year')['use'].sum().reset_index()
+    year_rental_total = year_rental_total[year_rental_total['center'] == dys_nm]
             
 
     fig2 = px.line(
@@ -36,10 +39,13 @@ def meanChart(total_df):
 def monthChart(total_df):
     st.markdown('## 월별 따릉이 평균 대여 추세 \n')
     
+    dys_nm = st.sidebar.selectbox('대여소', total_df['center'].unique())
+
     total_df['date'] = pd.to_datetime(total_df['date'].astype(str),format='%Y-%m')
     total_df['month'] = total_df['date'].dt.month
     
     month_rental_total = total_df.groupby('month')['use'].mean().reset_index()
+    month_rental_total = month_rental_total[month_rental_total['center'] == dys_nm]
 
     fig3 = px.line(
         month_rental_total,
