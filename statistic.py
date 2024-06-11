@@ -52,7 +52,7 @@ def corrRelation(total_df, dys_nm):
 
     fig, ax = plt.subplots(figsize=(10, 6))
     sns.lineplot(x='month', y='use', data=corr_df, ax = ax)
-    sns.scatterplot(x='month', y='use', data=corr_df, ax = ax, color='red', s=100, label= "포인트 데이터")
+    sns.scatterplot(x='month', y='use', data=corr_df, ax = ax, color='black', s=18, label= "포인트 데이터")
     st.pyplot(fig)
 
 def ShowStat(total_df) :
