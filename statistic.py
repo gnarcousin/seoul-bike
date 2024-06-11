@@ -39,6 +39,7 @@ def corrRelation(total_df, dys_nm):
 
     total_df['month'] = total_df['date'].dt.month
     total_df['day'] = total_df['date'].dt.day
+    total_df['month_day'] = total_df['date'].dt.strftime('%m-%d')
     ddy_df = total_df[(total_df['center'] == dys_nm) & (total_df['month'].isin([2,3]))]
     ddy_feb_df = ddy_df[ddy_df['month'] == 2]
     ddy_mar_df = ddy_df[ddy_df['month'] == 3]
@@ -58,8 +59,8 @@ def corrRelation(total_df, dys_nm):
     corr_df = ddy_df[['date', 'use', 'center', 'month']].reset_index(drop=True)
 
     fig, ax = plt.subplots(figsize=(10, 6))
-    sns.lineplot(x='date', y='use', data=corr_df, ax = ax)
-    sns.scatterplot(x='date', y='use', data=corr_df, ax = ax, color='black', s=18)
+    sns.lineplot(x='month_day', y='use', data=corr_df, ax = ax)
+    sns.scatterplot(x='month_day', y='use', data=corr_df, ax = ax, color='black', s=18)
     st.pyplot(fig)
 
 def ShowStat(total_df) :
