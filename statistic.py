@@ -5,6 +5,8 @@ import plotly.express as px
 from pingouin import ttest
 import matplotlib.pyplot as plt
 import seaborn as sns
+import os
+import matplotlib.font_manager as fm
 
 def twoMeans(total_df, dys_nm):
     
@@ -29,6 +31,10 @@ def twoMeans(total_df, dys_nm):
         st.markdown('p-val 값이 0.05보다 작으므로 평균 대여량 차이는 **있다.**')
 
 def corrRelation(total_df, dys_nm):
+    fpath = os.path.join(os.getcwd(), "NanumFont/NanumGothicBold.ttf")
+    fontprop = fm.FontProperties(fname=fpath, size=12)
+    plt.rc('font', family = 'NanumGothic')
+
     st.markdown(f'### 서울시 "{dys_nm}" 2, 3월 따릉이 대여량 상관 분석')
 
     total_df['month'] = total_df['date'].dt.month
