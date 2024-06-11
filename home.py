@@ -56,3 +56,9 @@ def run_home(total_df):
         "기후동행 카드의 보급의 증가로 따릉이 사용률이 늘어났는지와 따릉이 대여소가 필요하거나 많이 사용되는 지역에 대해 안다면\n"
         "더 원할한 서비스를 제공할 수 있기에 분석하였습니다."
         )
+
+    st.markdown(
+        "## 활용한 공공데이터 \n"
+        "1. 서울시 공공자전거 이용현황: https://data.seoul.go.kr/dataList/OA-14994/F/1/datasetView.do#"
+        "2. 서울시 따릉이대여소 마스터 정보: https://data.seoul.go.kr/dataList/OA-21235/S/1/datasetView.do"
+    )
