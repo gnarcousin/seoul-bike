@@ -74,4 +74,6 @@ def showMap(total_df):
     st.markdown("- 일부 데이터만 확인")
     st.write(merge_df[['EMD_KOR_NM', 'mean']].head(3))
     st.markdown("<hr>", unsafe_allow_html = True)
+
+    st.markdown("## 서울시 동별 대여소와 대여 현황")
     mapMatplot(merge_df, seoul_gpd)
