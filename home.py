@@ -55,7 +55,10 @@ def run_home(total_df):
     st.markdown(
         "기후동행 카드의 보급의 증가로 따릉이 사용률이 늘어났는지와 따릉이 대여소가 필요하거나 많이 사용되는 지역에 대해 안다면\n"
         "더 원할한 서비스를 제공할 수 있을 것이라 판단했기에 분석하였습니다."
-        )
+    )
+    st.image(
+        "https://mblogthumb-phinf.pstatic.net/MjAyNDAxMjlfMjQ0/MDAxNzA2NTA2ODExMTUw.jj8aZuN1aea7XholfBBVkgfY2ybCUDj_0IhSHTTI1HMg.x-3qF7Hz8lt7_hySuAOqVGtrWzF8KK0I5VpP9j-PH5og.JPEG.dailytravel12/%EA%B8%B0%ED%9B%84%EB%8F%99%ED%96%89%EC%B9%B4%EB%93%9C_%EB%94%B0%EB%A6%89%EC%9D%B4%EB%93%B1%EB%A1%9D_1.jpg?type=w800"
+    )
 
     st.markdown(
         "## 활용한 공공데이터 \n"
