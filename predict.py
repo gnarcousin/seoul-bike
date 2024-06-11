@@ -49,7 +49,7 @@ def dy_predict(total_df, sample_size=10, selected_centers=None):
 
     num_plots = len([result for result in results if result[1] is not None])
     rows = (num_plots + 3) // 4
-    fig, axs = plt.subplots(figsize=(24, rows * 12), ncols=2, nrows=rows)
+    fig, axs = plt.subplots(figsize=(24, rows * 12), ncols=4, nrows=rows)
     axs = axs.flatten()
 
     plot_idx = 0
