@@ -13,8 +13,8 @@ def main():
 
     with st.sidebar:
         st.image('https://i.namu.wiki/i/mH1hBkmht5rIk014DLj9to2xXxgyPXC5KiYgaVbicDJH8w5tmwN3SMyBKd5HfOuFeCIs1LUvXuOfCKpztENlfA.webp')
-        selected = option_menu('대시보드 메뉴', ['홈', '탐색적 자료분석', '따릉이 예측'],
-                                    icons=['house', 'file-bar_graph', 'graph-up-arrow'], menu_icon = 'cast', default_index = 0)
+        selected = option_menu('대시보드 메뉴', ['홈', '탐색적 자료분석', '따릉이 사용률 예측'],
+                                    icons=['house', 'file-bar-graph', 'graph-up-arrow'], menu_icon = 'cast', default_index = 0)
     if selected == '홈':
         run_home(total_df)
     elif selected == '탐색적 자료분석':
