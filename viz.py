@@ -4,7 +4,7 @@ import plotly.express as px
 
 def whereChart(total_df):
     st.markdown('## 지역별 따릉이 평균 대여 추세 \n')
-    st.write(f'{dys_nm2} 대여소의 전체 따릉이 평균 대여 추세')
+    st.write(f'{dys_nm} 대여소의 전체 따릉이 평균 대여 추세')
     
     dys_nm = st.sidebar.selectbox('대여소', total_df['center'].unique())
     filtered_df = total_df[total_df['center'] == dys_nm]
