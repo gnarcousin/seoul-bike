@@ -26,11 +26,11 @@ def meanChart(total_df):
     total_df['year'] = total_df['date'].dt.year
 
     year_rental_total = total_df.groupby('year')['use'].sum().reset_index()
-    year_rental_total = year_rental_total[year_rental_total['center'] == dys_nm]
+    year_rental_total2 = year_rental_total[year_rental_total['center'] == dys_nm]
             
 
     fig2 = px.line(
-        year_rental_total,
+        year_rental_total2,
         x = 'year',
         y = 'use'
     )
@@ -45,10 +45,10 @@ def monthChart(total_df):
     total_df['month'] = total_df['date'].dt.month
     
     month_rental_total = total_df.groupby('month')['use'].mean().reset_index()
-    month_rental_total = month_rental_total[month_rental_total['center'] == dys_nm]
+    month_rental_total2 = month_rental_total[month_rental_total['center'] == dys_nm]
 
     fig3 = px.line(
-        month_rental_total,
+        month_rental_total2,
         x = 'month',
         y = 'use'
     )
