@@ -56,11 +56,9 @@ def corrRelation(total_df, dys_nm):
     else:
         st.markdown('p-val 값이 0.05보다 작으므로 평균 대여량 차이는 있다.')
 
-    corr_df = ddy_df[['date', 'use', 'center', 'month']].reset_index(drop=True)
-
     fig, ax = plt.subplots(figsize=(10, 6))
-    sns.lineplot(x='month_day', y='use', data=corr_df, ax = ax)
-    sns.scatterplot(x='month_day', y='use', data=corr_df, ax = ax, color='black', s=18)
+    sns.lineplot(x='month_day', y='use', data=ddy_df, ax = ax)
+    sns.scatterplot(x='month_day', y='use', data=ddy_df, ax = ax, color='black', s=18)
     st.pyplot(fig)
 
 def ShowStat(total_df) :
