@@ -1,8 +1,6 @@
 import streamlit as st
 import pandas as pd
-from plotly.subplots import make_subplots
 import plotly.express as px
-import matplotlib.pyplot as plt
 
 def whereChart(total_df):
     st.markdown('## 지역별 따릉이 대여 추세 \n')
@@ -12,8 +10,8 @@ def whereChart(total_df):
 
     fig = px.line(
         filtered_df,
-        x = filtered_df['date'],
-        y = filtered_df['use']
+        x = 'date',
+        y = 'use'
     )
     st.plotly_chart(fig)
 
@@ -22,15 +20,14 @@ def meanChart(total_df):
 
     dys_nm2 = st.sidebar.selectbox('대여소', total_df['center'].unique())
     
-    total_df['date'] = pd.to_datetime(total_df['date'].astype(str),format='%Y-%m')
+    total_df['date'] = pd.to_datetime(total_df['date'].astype(str), format='%Y-%m')
     total_df['year'] = total_df['date'].dt.year
-
-    year_rental_total = total_df.groupby('year')['use'].sum().reset_index()
-    year_rental_total2 = year_rental_total[year_rental_total['center'] == dys_nm2]
-            
+    
+    filtered_df = total_df[total_df['center'] == dys_nm2]
+    year_rental_total = filtered_df.groupby('year')['use'].sum().reset_index()
 
     fig2 = px.line(
-        year_rental_total2,
+        year_rental_total,
         x = 'year',
         y = 'use'
     )
@@ -41,21 +38,18 @@ def monthChart(total_df):
     
     dys_nm2 = st.sidebar.selectbox('대여소', total_df['center'].unique())
 
-    total_df['date'] = pd.to_datetime(total_df['date'].astype(str),format='%Y-%m')
+    total_df['date'] = pd.to_datetime(total_df['date'].astype(str), format='%Y-%m')
     total_df['month'] = total_df['date'].dt.month
     
-    month_rental_total = total_df.groupby('month')['use'].mean().reset_index()
-    month_rental_total2 = month_rental_total[month_rental_total['center'] == dys_nm2]
+    filtered_df = total_df[total_df['center'] == dys_nm2]
+    month_rental_total = filtered_df.groupby('month')['use'].mean().reset_index()
 
     fig3 = px.line(
-        month_rental_total2,
+        month_rental_total,
         x = 'month',
         y = 'use'
     )
     st.plotly_chart(fig3)
-
-
-
 
 def barChart(total_df):
     pass
