@@ -96,5 +96,5 @@ def showMap(total_df):
     mapMatplot(merge_df, seoul_gpd)
     st.markdown("<hr>", unsafe_allow_html = True)
 
-    st.markdonw("## 상위 10개 동별 평균 사용량 히스토그램")
+    st.markdown("## 상위 10개 동별 평균 사용량 히스토그램")
     plot_histogram(merge_df)
