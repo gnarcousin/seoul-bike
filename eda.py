@@ -15,16 +15,18 @@ def home():
                 )
     st.markdown(
         '### Statistics 개요\n'
+        '- 서울시 대여소별 2, 3 월 따릉이 대여량 차이 검증\n'
+        '- 서울시 대여소별 2, 3 월 따릉이 대여량의 상관분석\n'
     )
     st.markdown(
         '### Map 개요\n'
+        '- 서울시 대여소 사용량과 동별 지도\n'
     )
 
 def run_eda_home(total_df):
     st.markdown(
         '### 탐색적 자료분석 개요 \n'
         '탐색적 자료 분석 페이지입니다.'
-        '여기에 포함하고 싶은 내용을 넣을 수 있습니다.'
                 )
 
     selected = option_menu(
