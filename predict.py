@@ -49,7 +49,7 @@ def dy_predict(total_df, sample_size=10, selected_centers=None):
 
     num_plots = len([result for result in results if result[1] is not None])
     rows = (num_plots + 3) // 4
-    fig, axs = plt.subplots(figsize=(40, rows * 10), ncols=2, nrows=rows)
+    fig, axs = plt.subplots(figsize=(24, rows * 12), ncols=2, nrows=rows)
     axs = axs.flatten()
 
     plot_idx = 0
@@ -64,6 +64,7 @@ def dy_predict(total_df, sample_size=10, selected_centers=None):
         axs[plot_idx].set_ylabel('평균 사용량', fontproperties=fontprop)
         for tick in axs[plot_idx].get_xticklabels():
             tick.set_rotation(30)
+            tick.set_fontsize(14)
         plot_idx += 1
 
     for j in range(plot_idx, len(axs)):
